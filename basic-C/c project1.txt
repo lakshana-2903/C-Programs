@@ -1,0 +1,237 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+bool payment(){
+    printf("what do u prefer:(ONLINE/OFFLINE):\n");
+    char modeofpayment[100];
+    scanf("%s", modeofpayment);
+    printf("To Comform payment type {P}");
+    char final;
+    scanf(" %c", &final);
+    if(final == 'P' || final == 'p'){
+        return true;
+    }
+    return false;
+}
+void ordering(char val){
+    if(val=='y'){
+        printf("Conform Your order by payment!(y/n)\n");
+        char pay;
+        scanf(" %c", &pay);
+        if(pay=='y'){
+        bool done = payment();
+            if(done)printf("Payment Successful!\nYour order has been placed :)\n");
+            else printf("Payment failed :(\n");
+        }
+        else{
+            printf("Payment unsuccessful!\n Do u want to see other options??\n");
+        }
+    }
+    else if(val == 'n'){
+        printf("Thanks for visiting our site!");
+    }
+}
+int main(){
+    int choice;
+    printf("WELCOME TO ONLINE SHOPPING:\n");
+    printf("Choose a menu:\n1. Shoes\n2. Watches\n3. Mobiles\nEnter the choice: ");
+    scanf("%d", &choice);
+    switch(choice){
+        case 1: printf("You have selected shoes!\nBRAND:\n1. Nike\n2. Puma\n3. Adidas\nWhich BRAND do u prefer: ");
+                int brand;
+                scanf("%d", &brand);
+                switch(brand){
+                    case 1: printf("You have selected Nike!\nMODEL:\na.Nike Air Force 1\nb.Nike Air Max 90\nc.Nike Dunk Low\nWhich Model do u prefer: ");
+                            char model;
+                            scanf(" %c", &model);
+                            switch(model){
+                                case'a':printf("You have selected Nike Air Force Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case'b':printf("You have selected Nike Air Max 90 Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val1);
+                                         ordering(val1);
+                                         break;
+                                case'c':printf("You have selected Nike Dunk Low Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val2);
+                                         ordering(val2);
+                                         break;
+                            }break;
+                    case 2: printf("You have selected Puma!\nMODEL:\na.Suede 1\nb.Smash \nc.Palermo\nWhich Model do u prefer: ");
+                            char model1;
+                            scanf(" %c", &model1);
+                            switch(model1){
+                                case 'a':printf("You have selected Suede Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case 'b':printf("You have selected Smash Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case 'c':printf("You have selected Palermo Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                            }break;
+                    case 3: printf("You have selected Adidas!\nMODEL:\na.Samba 1\nb.Gazelle \nc.Campus\nWhich Model do u prefer: ");
+                            char model2;
+                            scanf(" %c", &model2);
+                            switch(model2){
+                                case'a':printf("You have selected Samba Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case'b':printf("You have selected Gazelle Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case'c':printf("You have selected Campus Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                            }break;
+                }break;
+        case 2: printf("You have selected Watches!\nBRAND:\n1. Caseo\n2. Titan\n3. Fastrack\nWhich BRAND do u prefer: ");
+                int brand1;
+                scanf("%d", &brand1);
+                switch(brand1){
+                    case 1: printf("You have selected Caseo!\nMODEL:\n a.F91W 1\nb.Duro\nc.Baby-G\nWhich Model do u prefer: ");
+                            char model;
+                            scanf(" %c", &model);
+                            switch(model){
+                                case 'a':printf("You have selected F91W Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case 'b':printf("You have selected Duro Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val1);
+                                         ordering(val1);
+                                         break;
+                                case 'c':printf("You have selected Baby-G Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val2);
+                                         ordering(val2);
+                                         break;
+                            }break;
+                    case 2: printf("You have selected Titan!\nMODEL:\n a.Edge 1\nb.Raga \nc.Karishma\nWhich Model do u prefer: ");
+                            char model1;
+                            scanf(" %c", &model1);
+                            switch(model1){
+                                case 'a':printf("You have selected Edge Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case 'b':printf("You have selected Raga Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val1);
+                                         ordering(val1);
+                                         break;
+                                case 'c':printf("You have selected Karishma Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val2);
+                                         ordering(val2);
+                                         break;
+                            }break;
+                    case 3: printf("You have selected Fastrack!\nMODEL:\n a.Reflex 1\nb.Alpha \nc.Limitless\nWhich Model do u prefer: ");
+                            char model2;
+                            scanf(" %c", &model2);
+                            switch(model2){
+                                case 'a':printf("You have selected Reflex Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case 'b':printf("You have selected Alpha Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val1);
+                                         ordering(val1);
+                                         break;
+                                case 'c':printf("You have selected Limitless Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val2);
+                                         ordering(val2);
+                                         break;
+                            }break;
+                }break;
+        case 3: printf("You have selected Moblies!\nBRAND:\n1. Samsung\n2. Oppo\n3. Realme\nWhich BRAND do u prefer: ");
+                int brand2;
+                scanf("%d", &brand2);
+                switch(brand2){
+                    case 1: printf("You have selected Samsung!\nMODEL:\n a.Galaxy S24 1\nb.Galaxy S23\nc.Galaxy Z Fold5\nWhich Model do u prefer: ");
+                            char model;
+                            scanf(" %c", &model);
+                            switch(model){
+                                case 'a':printf("You have selected Galaxy S24 Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case 'b':printf("You have selected Galaxy S23 Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val1);
+                                         ordering(val1);
+                                         break;
+                                case 'c':printf("You have selected Galaxy Z Fold5 Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val2);
+                                         ordering(val2);
+                                         break;
+                            }break;
+                    case 2: printf("You have selected Oppo!\nMODEL:\n a.Reno 10 1\nb.Oppo A78 \nc.F21 Pro\nWhich Model do u prefer: ");
+                            char model1;
+                            scanf(" %c", &model1);
+                            switch(model1){
+                                case 'a':printf("You have selected Reno 10 Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case 'b':printf("You have selected Oppo A78 Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val1);
+                                         ordering(val1);
+                                         break; 
+                                case 'c':printf("You have selected F21 Pro Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val2);
+                                         ordering(val2);
+                                         break;
+                            }break;
+                    case 3: printf("You have selected Realme!\nMODEL:\n a.Realme GT7 1\nb.Realme 12 Pro \nc.Nazro 70\nWhich Model do u prefer: ");
+                            char model2;
+                            scanf(" %c", &model2);
+                            switch(model2){
+                                case 'a':printf("You have selected Realme GT7 Model!\nDo you want to purchase?(y/n):\n");
+                                         char val;
+                                         scanf(" %c", &val);
+                                         ordering(val);
+                                         break;
+                                case 'b':printf("You have selected Realme 12 Pro Model!\nDo you want to purchase?(y/n):\n");
+                                         char val1;
+                                         scanf(" %c", &val1);
+                                         ordering(val1);
+                                         break;
+                                case 'c':printf("You have selected Nazro 70 Model!\nDo you want to purchase?(y/n):\n");
+                                         char val2;
+                                         scanf(" %c", &val2);
+                                         ordering(val2);
+                                         break;
+                            }break;
+                }break;
+        default: printf("Invalid Number input!");
+    }
+}

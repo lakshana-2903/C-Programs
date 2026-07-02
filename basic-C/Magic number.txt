@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main(){
+	int n,x=7;
+	scanf("%d", &n);
+	do{
+		int sum=0;
+	while(n!=0){
+		int val = n%10;
+		sum+=val;
+		n = n/10;
+	}	
+	n = sum;
+	}while(n>=10);
+	if(n==x){
+		printf("LUCKY NUMBER!");
+	}
+	else{
+		printf("NOT A LUCKY NUMBER!");
+	}
+	return 0;
+}
