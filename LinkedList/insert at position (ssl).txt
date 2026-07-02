@@ -1,0 +1,112 @@
+#include<stdio.h>
+#include<stdlib.h>
+int ans = 0;
+struct node{
+
+	int data;
+
+	struct node* next;
+
+}*head = NULL;
+
+void insertAtEnd(int num){
+	struct node* newNode = (struct node*)malloc(sizeof(struct node));
+	newNode->data = num;         
+	newNode->next = NULL;
+	if(head==NULL){
+		head = newNode;
+		return;
+	}
+	struct node* temp = head;
+	while(temp->next!=NULL)
+	{
+	    temp = temp->next;
+	}
+	temp->next = newNode;
+}
+void insertAtBegin(int num){
+    struct node* newNode = (struct node*)malloc(sizeof(struct node));
+    newNode->data = num;
+    newNode->next = NULL;
+    if(head==NULL){
+        head = newNode;
+        return;
+    }
+    newNode->next = head;
+    head = newNode;
+}
+void insertAtPos(int nnum,int pos){       //10 20 30 40 50
+
+	if(pos==1){
+
+		insertAtBegin(nnum);
+
+		return;
+
+	}
+
+	struct node* temp = head;
+
+	struct node* newNode = (struct node*)malloc(sizeof(struct node));
+
+	newNode->data = nnum;
+
+	newNode->next = NULL;
+
+	while(temp!=NULL && pos>2){
+
+		temp = temp->next;
+
+		pos--;
+
+	}
+	if(temp==NULL){
+	    printf("Invalid Position!");
+	    ans = -1;
+	    return;
+	}
+
+	newNode->next = temp->next;
+
+	temp->next = newNode;
+
+}
+
+void display(){
+
+	struct node* temp = head;
+
+	while(temp!=NULL){
+
+		printf("%d ", temp->data);
+
+		temp = temp->next;
+
+	}
+
+}
+
+int main(){
+
+	int n,num;
+
+	scanf("%d", &n);
+
+	for(int i=0;i<n;i++){
+
+		scanf("%d", &num);
+
+		insertAtEnd(num);
+
+	}
+
+	int nnum,pos;
+
+	scanf("%d %d", &nnum,&pos);
+
+	insertAtPos(nnum,pos);
+	if(ans == 0){
+	    display();
+	}
+
+}
