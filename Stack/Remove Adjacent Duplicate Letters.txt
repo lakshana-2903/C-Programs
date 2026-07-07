@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int n,top=-1;
+    scanf("%d", &n);
+    char s[n+1];
+    scanf("%s", s);
+    char stack[n];
+    for(int i=0;i<n;i++){
+        char val = (char)s[i];
+        if(top==-1 || val!=stack[top]){
+            stack[++top] = val;
+            continue;
+        }
+        top--;
+    }
+    if(top==-1){
+        printf("EMPTY!");
+        return 0;
+    }
+    for(int i=0;i<top;i++){
+        printf("%c", stack[i]);
+    }
+    return 0;
+}
