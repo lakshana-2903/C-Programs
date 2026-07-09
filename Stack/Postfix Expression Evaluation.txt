@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+    char s[100],top = -1;
+    scanf("%s", s);
+    int stack[100];
+    for(int i=0;i<strlen(s);i++){
+        if(s[i] != '+' && s[i] != '-' && s[i] != '*' && s[i] != '/'){
+            int num = s[i]-'0';
+            stack[++top] = num;
+        }
+        else{
+            if(s[i]=='+'){
+                int sum = stack[top-1] + stack[top];
+                top--;
+                stack[top] = sum;
+            }
+            else if(s[i]=='-'){
+                int diff = stack[top-1] - stack[top];
+                top --;
+                stack[top] = diff;
+            }
+            else if(s[i]=='*'){
+                int mul = stack[top-1]*stack[top];
+                top--;
+                stack[top] = mul;
+            }
+            else{
+                int divi = stack[top-1]/stack[top];
+                top--;
+                stack[top] = divi;
+            }
+        }
+    }
+    printf("%d", stack[top]);
+}
